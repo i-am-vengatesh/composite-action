@@ -1,0 +1,22 @@
+name: "Build and Test"
+description: "Run build and test for the project"
+inputs:
+  node-version:
+    description: "Node.js version"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: ./build.sh
+
+    - name: Run Tests
+      run: ./test.sh
