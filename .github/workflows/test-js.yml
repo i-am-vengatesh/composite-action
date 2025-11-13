@@ -1,0 +1,12 @@
+# .github/workflows/test-js.yml
+name: Test JS Action (same repo)
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run local JS action
+        uses: ./.github/actions/js-hello
+        with:
+          name: "Vengatesh"
