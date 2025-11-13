@@ -5,9 +5,11 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
+      # ✅ This step fetches your repo code to the runner
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # ✅ Now the action exists on disk, so GitHub can find it
       - name: Run our custom composite action
         uses: ./.github/actions/hello-world
         with:
