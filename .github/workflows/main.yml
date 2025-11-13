@@ -1,0 +1,14 @@
+name: Test Composite Action
+on: [push]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run our custom composite action
+        uses: ./.github/actions/hello-world
+        with:
+          name: "Vengatesh"
