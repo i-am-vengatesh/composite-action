@@ -1,0 +1,17 @@
+name: Test Docker Action (Same Repo)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-docker-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run custom docker action
+        uses: ./.github/actions/hello-docker
+        with:
+          name: "Vengatesh"
