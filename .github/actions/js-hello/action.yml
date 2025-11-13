@@ -1,0 +1,10 @@
+name: "JS Hello Action"
+description: "Simple JavaScript action with no external deps"
+inputs:
+  name:
+    description: "Name to greet"
+    required: false
+    default: "World"
+runs:
+  using: "node16"
+  main: "index.js"
